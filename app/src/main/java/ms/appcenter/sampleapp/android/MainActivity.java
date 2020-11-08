@@ -14,7 +14,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
-import com.microsoft.appcenter.distribute.Distribute;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
             // Use APPCENTER_APP_SECRET environment variable if it exists
             AppCenter.start(getApplication(), BuildConfig.APPCENTER_APP_SECRET,
-                    Analytics.class, Crashes.class, Distribute.class);
+                    Analytics.class, Crashes.class);
         } else {
             // Otherwise use the hardcoded string value here
             AppCenter.start(getApplication(), "24fcea82-67f5-4fde-b898-3c19170bc0df",
-                    Analytics.class, Crashes.class, Distribute.class);
+                    Analytics.class, Crashes.class);
         }
 
 
